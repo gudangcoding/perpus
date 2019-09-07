@@ -1,0 +1,11 @@
+<ion-content>
+  <div padding class="form">
+    <ion-input type="text" placeholder="Nama" [(ngModel)]="nama"></ion-input>
+    <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+    <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+    <ion-input type="password" placeholder="Password"  [(ngModel)]="password"></ion-input>
+    <ion-input type="password" placeholder="Ulang Password"  [(ngModel)]="ulangpassword"></ion-input>
+    <button ion-button outline block (click)="daftar()">Daftar</button>
+    <button ion-button clear block (click)="login()">Login</button>
+  </div>
+</ion-content>

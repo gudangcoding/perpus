@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notifikasi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let notif of notifications; let i=index">    
+    
+    <button ion-item text-wrap *ngIf="notif.idpost!=0" (click)="openPost(notif.idpost)">
+      <p *ngIf="notif.baru==1"><b>{{notif.nama}} : 
+      {{notif.notifikasi}}</b></p>
+       <p *ngIf="notif.baru==0"><b>{{notif.nama}} : </b>
+      {{notif.notifikasi}}</p>
+    </button>
+
+    <button ion-item text-wrap *ngIf="notif.idpost==0" (click)="openProfil(notif.target)">
+      <p *ngIf="notif.baru==1"><b>{{notif.nama}} : 
+      {{notif.notifikasi}}</b></p>
+       <p *ngIf="notif.baru==0"><b>{{notif.nama}} : </b>
+      {{notif.notifikasi}}</p>
+    </button>
+
+  </ion-list>
+</ion-content>
+

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Komentar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let comment of comments; let i=index">    
+    <ion-item text-wrap>
+      <p><b>{{comment.nama}} : </b>
+      {{comment.komentar}}</p>
+      <div class='date'>{{comment.tanggal}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-textarea autosize placeholder="Komentar..." [(ngModel)]="komentar"></ion-textarea>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="sendComment()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

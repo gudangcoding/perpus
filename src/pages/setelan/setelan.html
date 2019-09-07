@@ -1,0 +1,32 @@
+<ion-header>
+   <ion-navbar>
+       <ion-title>Setelan</ion-title>
+       <ion-buttons start>
+           <button ion-button icon-only (click)="saveChange()">
+             <ion-icon name="checkmark"></ion-icon>
+           </button>
+       </ion-buttons>
+   </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+   <ion-list>
+      <ion-avatar>
+            <div class="avatar-box">
+            <img src="{{image}}">
+
+            <button round (click)="openMedia()">
+               <ion-icon name="camera"></ion-icon>
+            </button>
+         </div>
+      </ion-avatar>
+   </ion-list>
+   <hr>
+   <ion-list>
+     <ion-item>
+        <ion-input placeholder="Name" [(ngModel)]="name" (focus)="selectText($event)" clearInput></ion-input>
+     </ion-item>
+   </ion-list>
+   <hr>
+</ion-content>

@@ -1,0 +1,32 @@
+page-setelan{
+  ion-avatar{
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+  }
+  
+  .avatar-box{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+
+    img{    
+      width: 150px !important;  
+      height: 150px !important;  
+      border-radius: 50%;
+    }
+
+    button{
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: blue;
+      color: #fff;
+      z-index: 100;
+    }
+  }
+}

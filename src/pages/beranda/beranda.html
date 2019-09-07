@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Appict</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let post of posts; let i=index">    
+    <button ion-item (click)="openProfil(post.id_member)">
+      <ion-thumbnail item-left>
+        <img src="{{server+post.image}}">
+      </ion-thumbnail>
+      <span class="li-user">{{post.title}}</span>
+    </button>
+
+    <img src="{{server+post.gambar}}" width="100%">
+
+    <div>
+      <button ion-button clear (click)="changeLike(i)">
+          <ion-icon name="heart" *ngIf="post.suka==1" class="red"></ion-icon>
+          <ion-icon name="heart" *ngIf="post.suka==0"></ion-icon>
+      </button>
+      <button ion-button clear (click)="openComment(i)">
+         <ion-icon name="chatbubbles"></ion-icon>
+      </button>
+    </div>
+
+    <ion-card-content>
+      <p> {{post.post}}</p>
+      <button ion-button text-capitalize no-padding clear *ngIf="post.jml_komentar!=0" (click)="openComment(i)">
+        <small>Tampilkan {{post.jml_komentar}} komentar</small>
+      </button><br>     
+      <ion-note><small>{{post.tanggal}}</small></ion-note>
+    </ion-card-content>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

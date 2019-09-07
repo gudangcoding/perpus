@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Post Baru</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>    
+    <ion-avatar>
+      <img src="{{image}}">
+    </ion-avatar>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-textarea autosize placeholder="Keterangan..." [(ngModel)]="keterangan"></ion-textarea>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="sendPost()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
